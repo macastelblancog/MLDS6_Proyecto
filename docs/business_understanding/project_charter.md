@@ -22,24 +22,22 @@
 
 ## Metodología
 
-[Descripción breve de la metodología que se utilizará para llevar a cabo el proyecto]
+[En nuestro proyecto de detección de sarcasmo en titulares de noticias, comenzaremos cargando y explorando un dataset de Kaggle para familiarizarnos con sus características. Luego, procederemos a preprocesar los textos mediante técnicas de limpieza y tokenización, utilizando embeddings pre-entrenados para transformar los titulares en vectores numéricos. Desarrollaremos un modelo con redes neuronales varias para aprovechar sus fortalezas en la captura de patrones locales y dependencias de largo alcance. Tras entrenar y optimizar nuestro modelo con técnicas como la validación cruzada, evaluaremos su desempeño usando métricas como precisión y recall, y finalmente lo prepararemos para despliegue en un entorno de producción, asegurando su capacidad de clasificar nuevos titulares.]
 
 ## Cronograma
 
 | Etapa | Duración Estimada | Fechas |
 |------|---------|-------|
-| Entendimiento del negocio y carga de datos | 2 semanas | del 1 de mayo al 15 de mayo |
-| Preprocesamiento, análisis exploratorio | 4 semanas | del 16 de mayo al 15 de junio |
-| Modelamiento y extracción de características | 4 semanas | del 16 de junio al 15 de julio |
-| Despliegue | 2 semanas | del 16 de julio al 31 de julio |
-| Evaluación y entrega final | 3 semanas | del 1 de agosto al 21 de agosto |
-
-Hay que tener en cuenta que estas fechas son de ejemplo, estas deben ajustarse de acuerdo al proyecto.
+| Entendimiento del negocio y carga de datos | 1.5 semanas | del 2 de mayo al 11 de mayo |
+| Preprocesamiento, análisis exploratorio | 1 semana | del 9 de mayo al 16 de mayo |
+| Modelamiento y extracción de características | 1 semana | del 16 de mayo al 23 de mayo |
+| Despliegue | 1 semana | del 23 de mayo al 30 de mayo |
+| Evaluación y entrega final | 1 semana | del 30 de mayo al 4 de junio |
 
 ## Equipo del Proyecto
 
-- [Nombre y cargo del líder del proyecto]
-- [Nombre y cargo de los miembros del equipo]
+- [Miguel Ángel Castelblanco García - Lider de equipo]
+- [Santiago Correa - Cientifico de datos   |  Juan Sebastian Valdes Fuentes - Científico de datos]
 
 ## Presupuesto
 
