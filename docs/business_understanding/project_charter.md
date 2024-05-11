@@ -2,7 +2,7 @@
 
 ## Nombre del Proyecto
 
-[Nombre del proyecto aquí]
+[Análisis de sentimientos (sarcasmo) para noticias en inglés con ML]
 
 ## Objetivo del Proyecto
 
