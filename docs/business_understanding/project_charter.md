@@ -49,7 +49,30 @@ Desarrollaremos un modelo con redes neuronales varias para aprovechar sus fortal
 
 ## Presupuesto
 
-[Descripción del presupuesto asignado al proyecto]
+1. Recursos Humanos:
+
+    Científicos de Datos (3 personas): Dado que el proyecto no cuenta con remuneración, no incluiremos costos directos de salario. Sin embargo, es importante considerar el valor del tiempo invertido por cada miembro del equipo.
+
+2. Software y Herramientas:
+
+    Licencias de Software: Asumiendo que se utilizarán herramientas de código abierto (Python, TensorFlow, etc.), no se anticipan costos directos aquí. Sin embargo, podría ser necesario invertir en software específico o plugins que mejoren la productividad o sean críticos para ciertas tareas ($60 USD).
+
+3. Hardware:
+
+    Uso de Computadoras Personales: No se añaden costos adicionales ya que se utilizarán recursos propios.
+
+4. Otros Gastos:
+
+    Material de Capacitación: Curso de Metodologías Ágiles para el Desarrollo de Aplicaciones con Machine Learning para la capacitación de los cientificos de datos ($ 386 USD x 3)
+    Gastos Diversos: Incluye elementos como electricidad, internet, y otros pequeños gastos operativos. Estimemos un presupuesto de $50 para toda la duración del proyecto.
+
+Resumen del Presupuesto
+Categoría	      |  Costo Estimado (USD)
+Recursos Humanos	       $0
+Software y Herramientas	   $60
+Hardware	               $0
+Otros Gastos               $1208
+Total	                   $1268
 
 ## Stakeholders
 
