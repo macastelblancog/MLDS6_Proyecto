@@ -68,10 +68,15 @@ Desarrollaremos un modelo con redes neuronales varias para aprovechar sus fortal
 
 Resumen del Presupuesto
 Categoría	      |  Costo Estimado (USD)
+
 Recursos Humanos	       $0
+
 Software y Herramientas	   $60
+
 Hardware	               $0
+
 Otros Gastos               $1208
+
 Total	                   $1268
 
 ## Stakeholders
