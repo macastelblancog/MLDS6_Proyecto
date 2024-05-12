@@ -2,7 +2,7 @@
 
 ## Nombre del Proyecto
 
-[Análisis de sentimientos (sarcasmo) para noticias en inglés con ML]
+Análisis de sentimientos (sarcasmo) para noticias en inglés con ML
 
 ## Objetivo del Proyecto
 
@@ -25,7 +25,9 @@ El proyecto se considerará exitoso si se logran los siguientes objetivos:
 
 ## Metodología
 
-[En nuestro proyecto de detección de sarcasmo en titulares de noticias, comenzaremos cargando y explorando un dataset de Kaggle para familiarizarnos con sus características. Luego, procederemos a preprocesar los textos mediante técnicas de limpieza y tokenización, utilizando embeddings pre-entrenados para transformar los titulares en vectores numéricos. Desarrollaremos un modelo con redes neuronales varias para aprovechar sus fortalezas en la captura de patrones locales y dependencias de largo alcance. Tras entrenar y optimizar nuestro modelo con técnicas como la validación cruzada, evaluaremos su desempeño usando métricas como precisión y recall, y finalmente lo prepararemos para despliegue en un entorno de producción, asegurando su capacidad de clasificar nuevos titulares.]
+En nuestro proyecto de detección de sarcasmo en titulares de noticias, comenzaremos cargando y explorando un dataset de Kaggle para familiarizarnos con sus características. Luego, procederemos a preprocesar los textos mediante técnicas de limpieza y tokenización, utilizando embeddings pre-entrenados para transformar los titulares en vectores numéricos. 
+
+Desarrollaremos un modelo con redes neuronales varias para aprovechar sus fortalezas en la captura de patrones locales y dependencias de largo alcance. Tras entrenar y optimizar nuestro modelo con técnicas como la validación cruzada, evaluaremos su desempeño usando métricas como precisión y recall, y finalmente lo prepararemos para despliegue en un entorno de producción, asegurando su capacidad de clasificar nuevos titulares.
 
 ## Cronograma
 
@@ -39,8 +41,11 @@ El proyecto se considerará exitoso si se logran los siguientes objetivos:
 
 ## Equipo del Proyecto
 
-- [Miguel Ángel Castelblanco García - Lider de equipo]
-- [Santiago Correa - Cientifico de datos   |  Juan Sebastian Valdes Fuentes - Científico de datos]
+* Lider de equipo
+    - Miguel Castelblanco
+* Científico de datos
+    - Santiago Correa 
+    - Juan Sebastian Valdes Fuentes
 
 ## Presupuesto
 
@@ -50,9 +55,13 @@ El proyecto se considerará exitoso si se logran los siguientes objetivos:
 
 Para la implementación del proyecto en un posible mercado laboral real propondremos 2 potenciales stakeholders.
 
-*Stakeholder 1:* Director de Tecnología (CTO) de una empresa de análisis de medios de comunicación, este está interesado en mejorar las capacidades de análisis de texto de la empresa para ofrecer servicios más avanzados a sus clientes. Busca soluciones tecnológicas que puedan detectar el sarcasmo en los titulares de noticias para mejorar la precisión de los análisis de medios de comunicación. Espera que el proyecto proporcione un modelo de detección de sarcasmo en titulares de noticias que pueda integrarse en los sistemas de análisis de medios de comunicación de la empresa. Busca un modelo preciso y eficiente que mejore la calidad de los análisis realizados.
+*Stakeholder 1:* Director de Tecnología (CTO) de una empresa de análisis de medios de comunicación
 
-*Stakeholder 2:* Gerente de Producto de una empresa de tecnología que desarrolla herramientas de análisis de texto, este busca incorporar funcionalidades de detección de sarcasmo en las herramientas de análisis de texto de la empresa para hacerlas más atractivas para clientes potenciales y mejorar la competitividad en el mercado. Espera que el proyecto genere resultados tangibles que puedan incorporarse rápidamente en las herramientas de análisis de texto existentes de la empresa. Busca una solución innovadora que mejore la funcionalidad de las herramientas y atraiga a nuevos clientes.
+ Está interesado en mejorar las capacidades de análisis de texto de la empresa para ofrecer servicios más avanzados a sus clientes. Busca soluciones tecnológicas que puedan detectar el sarcasmo en los titulares de noticias para mejorar la precisión de los análisis de medios de comunicación. Espera que el proyecto proporcione un modelo de detección de sarcasmo en titulares de noticias que pueda integrarse en los sistemas de análisis de medios de comunicación de la empresa. Busca un modelo preciso y eficiente que mejore la calidad de los análisis realizados.
+
+*Stakeholder 2:* Gerente de Producto de una empresa de tecnología que desarrolla herramientas de análisis de texto
+
+ Busca incorporar funcionalidades de detección de sarcasmo en las herramientas de análisis de texto de la empresa para hacerlas más atractivas para clientes potenciales y mejorar la competitividad en el mercado. Espera que el proyecto genere resultados tangibles que puedan incorporarse rápidamente en las herramientas de análisis de texto existentes de la empresa. Busca una solución innovadora que mejore la funcionalidad de las herramientas y atraiga a nuevos clientes.
 
 
 ## Aprobaciones
