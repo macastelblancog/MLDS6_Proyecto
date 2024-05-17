@@ -4,15 +4,22 @@ Este documento contiene los resultados del análisis exploratorio de datos.
 
 ## Resumen general de los datos
 
-En esta sección se presenta un resumen general de los datos. Se describe el número total de observaciones, variables, el tipo de variables, la presencia de valores faltantes y la distribución de las variables.
+Nuestro conjunto de datos se compone de un total de 26709 observaciones y cuenta con 3 variables: article_link, head_line y is_sarcastic.
+
+Article_link es una variable de tipo String y corresponde al hipervínculo de la noticia original. La variable headline es tambien de tipo String e indica el titular de la noticia, por último, is_sarcastic es de tipo Integer y toma valores de 0 ó 1 indicando si el headline descrito es de carácter sarcástico o no. 
+
+Por otro lado, el dataset no cuenta con valores faltantes en ninguna de sus columnas, aunque si se identificaron algunos valores repetidos (107 en total). Eliminando dichos valores, tanto en la columna article_link como head_line todos su valores son únicos mientras que la columna is_sarcastic cuenta con 14951 entradas con valor 0 y 11651 de valor 1, es decir, una distribución de 56%-41% lo que nos indica que hay una leve desproporción de los datos hacia aquellos headlines que no son considerados como sarcásticos.
+
 
 ## Resumen de calidad de los datos
 
-En esta sección se presenta un resumen de la calidad de los datos. Se describe la cantidad y porcentaje de valores faltantes, valores extremos, errores y duplicados. También se muestran las acciones tomadas para abordar estos problemas.
+El dataset parece estar bstante bien documentado en el sentido que no cuenta con valores faltantes en ninguna de sus columnas. Por otra parte, la columna headline la cual se espera que tenga únicamente valores únicos realmente cuenta con 107 valores duplicados, por lo que optamos por deshacernos de las filas donde se presenta dicha duplicidad. Por ultimo, la variable “is_sarcastic” confirmamos que únicamente cuenta con valores 0 y 1 como se espera, por lo que el dataset no contiene valores extremos o que se cataloguen como erróneos.
 
 ## Variable objetivo
 
-En esta sección se describe la variable objetivo. Se muestra la distribución de la variable y se presentan gráficos que permiten entender mejor su comportamiento.
+la columna is_sarcastic la cual se toma como la variable objetivo cuenta con 26602 entradas (Después de eliminar duplicados) las cuales toman valor de 0 y 1 e indican si la entrada el headline de la noticia asociada es de carácter sarcástico o no. Al analizar la distribución de esta variable vemos que esta cuenta con 14591 filas con valor 0 y 11651 de valor 1, es decir, una distribución de 56%-41% lo que nos indica que hay una leve desproporción de los datos hacia aquellos headlines que no son considerados como sarcásticos.
+
+![PlotDistribucion](../Images/newplot.png)
 
 ## Variables individuales
 
