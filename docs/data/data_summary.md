@@ -19,7 +19,7 @@ El dataset parece estar bstante bien documentado en el sentido que no cuenta con
 
 la columna is_sarcastic la cual se toma como la variable objetivo cuenta con 26602 entradas (Después de eliminar duplicados) las cuales toman valor de 0 y 1 e indican si la entrada el headline de la noticia asociada es de carácter sarcástico o no. Al analizar la distribución de esta variable vemos que esta cuenta con 14591 filas con valor 0 y 11651 de valor 1, es decir, una distribución de 56%-41% lo que nos indica que hay una leve desproporción de los datos hacia aquellos headlines que no son considerados como sarcásticos.
 
-![PlotDistribucion](../Images/newplot.png)
+![PlotDistribucion](../Images/Histogram.png)
 
 ## Variables individuales
 
