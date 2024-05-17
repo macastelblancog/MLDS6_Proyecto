@@ -23,12 +23,19 @@ la columna is_sarcastic la cual se toma como la variable objetivo cuenta con 266
 
 ## Variables individuales
 
-En esta sección se presenta un análisis detallado de cada variable individual. Se muestran estadísticas descriptivas, gráficos de distribución y de relación con la variable objetivo (si aplica). Además, se describen posibles transformaciones que se pueden aplicar a la variable.
+En cuanto las variables individuales, al tratarse de un corpus donde la variable objetivo es la única de tipo Integer no se pueden manejar directamente relaciones con esta. Por otro lado, es interesante ver la distribución de la longitud de los headlines la cual se observa en la siguiente gráfica:
+ 
+![PlotDistribucion](../Images/Distribution.png)
+
+Vemos que la longitud de los headlines sigue una distribución normal con algunos valores extremos de más de 150 caracteres. Por otro lado, analizando este aspecto de manera estadística, vemos que la longitud de mayor frecuencia se encuentra entre 64 y 65 caracteres con 1273 apariciones, el headline de menor longitud cuenta con tan solo 7 caracteres, mientras que el de mayor longitud contiene hasta 254. Por ultimo, la media de longitud es de 61 caracteres.
 
 ## Ranking de variables
 
-En esta sección se presenta un ranking de las variables más importantes para predecir la variable objetivo. Se utilizan técnicas como la correlación, el análisis de componentes principales (PCA) o la importancia de las variables en un modelo de aprendizaje automático.
+El corpus cuenta únicamente con 2 variables de tipo String (Además de la variable objetivo). La primera de estas variables es “article_link” la cual sirve únicamente con variable complementaria ya que esta corresponde al hipervínculo de la noticia original (Útil por si algún usuario quisiera indagar mas sobre alguna noticia en especifico), por lo que esta variable no aporta ninguna información relevante para predecir la variable objetivo. 
+
+Por lo tanto, dicha variable objetivo depende única y exclusivamente de la información aportada por la variable “headline” la cual indica el titular de la noticia ya que de hecho el objetivo del corpus es precisamente identificar si el titular de una noticia tiene un tono sarcastico o no.
+
 
 ## Relación entre variables explicativas y variable objetivo
 
-En esta sección se presenta un análisis de la relación entre las variables explicativas y la variable objetivo. Se utilizan gráficos como la matriz de correlación y el diagrama de dispersión para entender mejor la relación entre las variables. Además, se pueden utilizar técnicas como la regresión lineal para modelar la relación entre las variables.
+Al ser un corpus donde únicamente se tiene una variable explicativa “headline” la cual es de tipo String, mientras que, la variable objetivo es de tipo Integer por lo que no se pueden manejar directamente relaciones con esta.
