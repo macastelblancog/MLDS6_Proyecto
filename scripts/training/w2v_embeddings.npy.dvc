@@ -1,0 +1,5 @@
+outs:
+- md5: 9a39e24b51bacc6d0c0c14bc998894a4
+  size: 32050928
+  hash: md5
+  path: w2v_embeddings.npy

@@ -1,0 +1,5 @@
+outs:
+- md5: 76cc5085664ed0281a7fa6a0bac25872
+  size: 92557952
+  hash: md5
+  path: w2v_embeddings.csv

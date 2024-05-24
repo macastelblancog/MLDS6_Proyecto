@@ -1,0 +1,5 @@
+outs:
+- md5: b165f550dc845ec8741b976da2f6ea3a
+  size: 82050176
+  hash: md5
+  path: bert_embeddings.npy
