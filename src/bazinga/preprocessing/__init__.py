@@ -131,55 +131,53 @@ def data_preprocess(df,column_name,save = False
     return df
 
 
-def vectorizar_Texto(corpus, max_features = 500):
-    '''
-        Esta funcion toma un corpus de texto y devuelve una matriz de texto
-        vectorizada. El metodo de vectorizacion es CountVectorizer, de
-        sklearn.feature_extraction.text, y se extraen max_features caracteristicas.
 
-        # Argumentos
-            corpus : List[str] : lista de textos a vectorizar
-            max_feature : int : maximo numero de caracteristicas a extraer
-        # Retorno
-            np.ndarray : matriz de texto vectorizada
-            CountVectorizer : vectorizador de texto
+def analisis_Conteo(corpus, get_table = True, get_wc = True, get_graph = True, max_features = 500):
+  
+    def vectorizar_Texto(corpus, max_features = 500):
+        '''
+            Esta funcion toma un corpus de texto y devuelve una matriz de texto
+            vectorizada. El metodo de vectorizacion es CountVectorizer, de
+            sklearn.feature_extraction.text, y se extraen max_features caracteristicas.
+
+            # Argumentos
+                corpus : List[str] : lista de textos a vectorizar
+                max_feature : int : maximo numero de caracteristicas a extraer
+            # Retorno
+                np.ndarray : matriz de texto vectorizada
+                CountVectorizer : vectorizador de texto
+        
+        '''
+        vect = CountVectorizer(max_features = max_features)
+        X = vect.fit_transform(corpus)
+        X = X.toarray()
+        return X, vect
+
+    def conteo_Palabras(X, vect):
+        '''
+            Esta funcion toma una matriz de texto y un vectorizador, y devuelve
+            un DataFrame con el conteo de palabras en el texto.
+
+            # Argumentos
+                X : np.ndarray : matriz de texto
+                vect : CountVectorizer : vectorizador de texto
+
+            # Retorno
+                pd.DataFrame : DataFrame con el conteo de palabras
+        '''
+        words = vect.get_feature_names_out()
+        words = pd.DataFrame({"word": words, "count": X.sum(axis=0)})
+        words = words.sort_values("count", ascending = False, kind = 'stable')
+        return words
+
+    def nube_Palabras(X, vect):
+        '''
+        
+        '''
+        wc = (WordCloud(width = 800, height = 400, max_words = 100, background_color = "#FFFFFF")
+                .generate_from_frequencies(dict(zip(vect.get_feature_names_out(), X.sum(axis=0)))))
+        return wc
     
-    '''
-    vect = CountVectorizer(max_features = max_features)
-    X = vect.fit_transform(corpus)
-    X = X.toarray()
-    return X, vect
-
-def conteo_Palabras(X, vect):
-
-    '''
-        Esta funcion toma una matriz de texto y un vectorizador, y devuelve
-        un DataFrame con el conteo de palabras en el texto.
-
-        # Argumentos
-            X : np.ndarray : matriz de texto
-            vect : CountVectorizer : vectorizador de texto
-
-        # Retorno
-            pd.DataFrame : DataFrame con el conteo de palabras
-    '''
-    words = vect.get_feature_names_out()
-    words = pd.DataFrame({"word": words, "count": X.sum(axis=0)})
-    words = words.sort_values("count", ascending = False, kind = 'stable')
-    return words
-
-def nube_Palabras(X, vect):
-
-    '''
-    
-    '''
-    wc = (WordCloud(width = 800, height = 400, max_words = 100, background_color = "#FFFFFF")
-            .generate_from_frequencies(dict(zip(vect.get_feature_names_out(), X.sum(axis=0)))))
-    return wc
-
-
-def analisisVectorizado(corpus, get_table = True, get_wc = True, get_graph = True, max_features = 500):
-
     X, vect = vectorizar_Texto(corpus, max_features)
     words = conteo_Palabras(X, vect)
     ans = [words]
@@ -195,6 +193,59 @@ def analisisVectorizado(corpus, get_table = True, get_wc = True, get_graph = Tru
                 plt.show()
     return ans
     
+
+def doc2Vec_embedding(corpus_df,column):
+    '''
+        
+    '''
+    documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(corpus_df[column])]
+    model = Doc2Vec(documents, vector_size = 100, window = 2, min_count = 1, workers = 4)
+    corpus_df['X'] = corpus_df[column].apply(lambda text: model.infer_vector(text.split()))
+    return corpus_df['X'].values
+
+def BERT_embeddings(texts, batch_size = 32):
+    '''
+        
+    '''
+    # Check for GPU
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased').to(device)
+    embeddings = []
+
+    for i in range(0, len(texts), batch_size):
+        batch_texts = texts[i:i+batch_size]
+        inputs = tokenizer(batch_texts, return_tensors = 'pt'
+                            , padding = True, truncation = True
+                            , max_length = 512
+                        ).to(device)
+        with torch.no_grad():
+            outputs = model(**inputs)
+        batch_embeddings = outputs.last_hidden_state[:, 0, :].cpu().numpy()
+        embeddings.append(batch_embeddings)
+    return np.vstack(embeddings)
+
+
+
+# Generate Word2Vec embeddings
+def get_w2v_embeddings(texts):
+    # Tokenize the headlines
+    tokenized_headlines = [headline.split() for headline in texts]
+    model = Word2Vec(sentences = tokenized_headlines
+                            , vector_size = 300, window = 5
+                            , min_count = 1, workers = 4
+                        )
+    embeddings = []
+    for text in texts:
+        words = text.split()
+        word_vectors = [model.wv[word] for word in words if word in model.wv]
+        if word_vectors:
+            embeddings.append(np.mean(word_vectors, axis=0))
+        else:
+            embeddings.append(np.zeros(300))  # Handle empty cases
+    return np.array(embeddings)
+
 
 
     
