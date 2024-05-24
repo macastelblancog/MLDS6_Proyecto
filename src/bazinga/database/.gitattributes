@@ -1,0 +1,2 @@
+bert_embeddings.npy filter=lfs diff=lfs merge=lfs -text
+w2v_embeddings.npy filter=lfs diff=lfs merge=lfs -text
