@@ -4,7 +4,8 @@
     lematizacion y eliminacion de acentos; ademas de funciones para la extraccion
     de caracteristicas de texto.
 '''
-
+# Verificar uso de CPU o GPU
+import torch
 
 # Manejo de rutas 
 import path
@@ -12,15 +13,22 @@ import os
 
 # Preprocesamiento de texto
 import re
-import en_core_web_sm
 import pandas as pd
 from unidecode import unidecode
+import numpy as np
 
 # Extraccion de caracteristicas
+
+## Scikit-learn
 from sklearn.feature_extraction.text import CountVectorizer
-from gensim.models.doc2vec import Doc2Vec
+## Gensim
+from gensim.models.doc2vec import Doc2Vec, Word2Vec
 from gensim.models.doc2vec import TaggedDocument
 from wordcloud import WordCloud
+## transformers
+from transformers import BertTokenizer, BertModel
+## spaCy
+import spacy
 
 # Visualizacion
 import matplotlib.pyplot as plt
@@ -50,7 +58,8 @@ def load_data(filename: str = None):
         raise FileNotFoundError('Error en archivo de datos.')
     
 # Load the spaCy model
-nlp = en_core_web_sm.load()
+# !python -m spacy download en_core_web_sm
+nlp = spacy.load("en_core_web_sm")
 
 def text_preprocess(text
                 ,stopword_filter  : bool= True, length_filter : bool = True
@@ -118,19 +127,19 @@ def data_preprocess(df,column_name,save = False
             pd.DataFrame : DataFrame con los textos preprocesados
             La columna se llama clean_text
     '''
-    df['clean_text'] = df[column_name].apply(
-                            lambda x: text_preprocess(x
-                                        ,stopword_filter,length_filter
-                                        ,lemmatize
-                                        ,min_length,max_length
-                                    )
-                        )
+
+    with torch.no_grad():
+        df['clean_text'] = df[column_name].apply(
+                                lambda x: text_preprocess(x
+                                            ,stopword_filter,length_filter
+                                            ,lemmatize
+                                            ,min_length,max_length
+                                        )
+                            )
     if save:
         route = str(directory) + f'/src/bazinga/database/Clean_Headlines.json'
         df.to_json(route, orient='records', lines=True)
     return df
-
-
 
 def analisis_Conteo(corpus, get_table = True, get_wc = True, get_graph = True, max_features = 500):
   
@@ -193,7 +202,6 @@ def analisis_Conteo(corpus, get_table = True, get_wc = True, get_graph = True, m
                 plt.show()
     return ans
     
-
 def doc2Vec_embedding(corpus_df,column):
     '''
         
@@ -207,6 +215,14 @@ def BERT_embeddings(texts, batch_size = 32):
     '''
         
     '''
+
+    if isinstance(texts, pd.Series):
+        texts = texts.tolist()
+    if not isinstance(texts, list):
+        try:
+            texts = list(texts)
+        except:
+            raise ValueError("texts must be a list or pandas Series")
     # Check for GPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -225,8 +241,6 @@ def BERT_embeddings(texts, batch_size = 32):
         batch_embeddings = outputs.last_hidden_state[:, 0, :].cpu().numpy()
         embeddings.append(batch_embeddings)
     return np.vstack(embeddings)
-
-
 
 # Generate Word2Vec embeddings
 def get_w2v_embeddings(texts):
