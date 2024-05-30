@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/5cc13e2ded2c4c649e8f39a1ab5c1de2/artifacts
+end_time: 1717027152009
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: 5cc13e2ded2c4c649e8f39a1ab5c1de2
+run_name: casual-vole-159
+run_uuid: 5cc13e2ded2c4c649e8f39a1ab5c1de2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717027090109
+status: 3
+tags: []
+user_id: not2

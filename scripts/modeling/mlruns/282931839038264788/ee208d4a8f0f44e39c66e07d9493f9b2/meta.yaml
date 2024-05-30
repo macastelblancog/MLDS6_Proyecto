@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/ee208d4a8f0f44e39c66e07d9493f9b2/artifacts
+end_time: 1717026610665
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: ee208d4a8f0f44e39c66e07d9493f9b2
+run_name: powerful-mouse-329
+run_uuid: ee208d4a8f0f44e39c66e07d9493f9b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717026547057
+status: 3
+tags: []
+user_id: not2

@@ -1,0 +1,16 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/4acc2002fb2e4b48a234a6ddfc4d8b6e/artifacts
+deleted_time: 1717026436955
+end_time: 1717026402056
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: deleted
+run_id: 4acc2002fb2e4b48a234a6ddfc4d8b6e
+run_name: painted-hawk-201
+run_uuid: 4acc2002fb2e4b48a234a6ddfc4d8b6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717026362813
+status: 3
+tags: []
+user_id: not2

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/d4d7c7d47e8a431d85180d7b6d3712a4/artifacts
+end_time: 1717026134924
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: d4d7c7d47e8a431d85180d7b6d3712a4
+run_name: bouncy-zebra-641
+run_uuid: d4d7c7d47e8a431d85180d7b6d3712a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717026011347
+status: 3
+tags: []
+user_id: not2

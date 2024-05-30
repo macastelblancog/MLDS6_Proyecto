@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/d5f15a2720ba4e5b8cbc5dac800b2183/artifacts
+end_time: 1717037604133
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: d5f15a2720ba4e5b8cbc5dac800b2183
+run_name: SVC
+run_uuid: d5f15a2720ba4e5b8cbc5dac800b2183
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717037502095
+status: 3
+tags: []
+user_id: not2

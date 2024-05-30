@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/fe3b00e4e6ae461c9513ab5f1198f211/artifacts
+end_time: 1717027538004
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: fe3b00e4e6ae461c9513ab5f1198f211
+run_name: zealous-moose-135
+run_uuid: fe3b00e4e6ae461c9513ab5f1198f211
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717027478907
+status: 3
+tags: []
+user_id: not2
