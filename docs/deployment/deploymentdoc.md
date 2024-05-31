@@ -2,11 +2,38 @@
 
 ## Infraestructura
 
-- **Nombre del modelo:** (nombre que se le ha dado al modelo)
-- **Plataforma de despliegue:** (plataforma donde se va a desplegar el modelo)
-- **Requisitos técnicos:** (lista de requisitos técnicos necesarios para el despliegue, como versión de Python, bibliotecas de terceros, hardware, etc.)
-- **Requisitos de seguridad:** (lista de requisitos de seguridad necesarios para el despliegue, como autenticación, encriptación de datos, etc.)
-- **Diagrama de arquitectura:** (imagen que muestra la arquitectura del sistema que se utilizará para desplegar el modelo)
+- **Nombre del modelo:** NN-BinaryCross-RMSprop
+- **Plataforma de despliegue:** MLflow (local)
+- **Requisitos técnicos:** 
+
+### Bibliotecas y Versiones
+- mlflow==2.13.0
+- keras==3.3.3
+- tensorflow==2.16.1
+- torch==2.3.0
+- transformers==4.41.2
+- scikit-learn==1.5.0
+- gensim==4.3.2
+- spacy==3.7.4
+- matplotlib==3.9.0
+- pandas==2.2.2
+- numpy==1.26
+### Descripción
+El modelo de despliegue requiere las siguientes bibliotecas y versiones para su funcionamiento. Estas bibliotecas son utilizadas para el preprocesamiento de texto, extracción de características y visualización de datos. Además, se incluyen las bibliotecas necesarias para el uso de MLflow como plataforma de despliegue.
+
+Se recomienda instalar estas bibliotecas utilizando un entorno virtual para evitar conflictos con otras bibliotecas o versiones de Python.
+
+## Requisitos de Seguridad
+
+No se requieren requisitos especiales de seguridad, ya que el modelo se utilizará localmente y no se trabajarán con datos confidenciales.
+
+## Diagrama de Arquitectura
+
+El modelo se desplegará y ejecutará localmente desde una terminal. La arquitectura es simple y consta de los siguientes componentes:
+
+- **Entorno Local:** Incluye el entorno de desarrollo donde se encuentra instalado MLflow y las bibliotecas necesarias para el modelo.
+- **MLflow Local:** MLflow se ejecuta localmente y permite gestionar y desplegar el modelo.
+- **Terminal:** Se utiliza para interactuar con MLflow y el modelo, permitiendo realizar solicitudes y recibir predicciones.
 
 ## Código de despliegue
 
@@ -16,7 +43,79 @@
 
 ## Documentación del despliegue
 
-- **Instrucciones de instalación:** (instrucciones detalladas para instalar el modelo en la plataforma de despliegue)
-- **Instrucciones de configuración:** (instrucciones detalladas para configurar el modelo en la plataforma de despliegue)
-- **Instrucciones de uso:** (instrucciones detalladas para utilizar el modelo en la plataforma de despliegue)
-- **Instrucciones de mantenimiento:** (instrucciones detalladas para mantener el modelo en la plataforma de despliegue)
+### Instrucciones de Instalación
+
+1. **Crear y activar un entorno virtual (opcional pero recomendado):**
+   - Para crear un entorno virtual con `venv` en Unix/macOS:
+     ```bash
+     python3 -m venv myenv
+     source myenv/bin/activate
+     ```
+   - Para crear un entorno virtual con `venv` en Windows:
+     ```bash
+     python -m venv myenv
+     myenv\Scripts\activate
+     ```
+   - Para crear un entorno virtual con `conda`:
+     ```bash
+     conda create --name myenv
+     conda activate myenv
+     ```
+
+2. **Instalar MLflow:**
+   ```bash
+   pip install mlflow==2.13.0
+   ```
+3. **Instalar las bibliotecas necesarias:**
+    ```bash
+    pip install keras==3.3.3 tensorflow==2.16.1 torch path os re pandas unidecode numpy scikit-learn gensim transformers spacy matplotlib
+    ```
+4. **Clonar el Repositorio:** 
+    ```bash
+    git clone https://github.com/macastelblancog/MLDS6_Proyecto
+    ```
+5. **Navegar al Directorio del Repositorio:**
+
+    ```bash
+    cd MLDS6_Proyecto
+    ```
+6. **Cargar el Modelo:** Utiliza la CLI de MLflow para cargar el modelo desde el repositorio clonado:
+    ```bash
+    mlflow models serve -m models/NN-BinaryCross-RMSprop --port <puerto>
+    ```
+    Reemplaza <puerto> por el puerto que deseas utilizar para acceder al modelo.
+
+ ### Instrucciones de uso 
+
+**Realizar una Predicción:**
+
+Utiliza herramientas como curl o tu lenguaje de programación favorito para enviar solicitudes HTTP al modelo y obtener predicciones. Por ejemplo, si estás utilizando curl:
+    
+
+    curl -X POST http://localhost:<puerto>/invocations -H "Content-Type: application/json" -d '{"data": "input_data"}'
+
+
+Reemplaza <puerto> por el puerto en el que está corriendo el modelo y "input_data" por los datos de entrada para la predicción.
+
+Una vez que hayas terminado de utilizar el modelo, puedes cerrar el servidor de MLflow. Esto detendrá el servidor y liberará los recursos utilizados.
+
+    Ctrl + C
+
+### Instrucciones de Mantenimiento para Usuarios
+
+1. **Actualizar el Repositorio:**
+Para obtener las últimas actualizaciones del modelo y del código de la aplicación, asegúrate de tener la última versión del repositorio clonado en tu máquina local:
+```
+    git pull origin main
+```
+2. **Instalar las Dependencias Actualizadas:**
+
+Si hay cambios en las dependencias del proyecto, instala las nuevas versiones
+
+3. **Ejecutar la Aplicación:**
+
+Inicia la aplicación localmente para comprobar que todo funcione correctamente con las actualizaciones realizadas.
+
+4. **Reportar Problemas o Bugs (Opcional):**
+
+Si encuentras algún problema o bug durante el uso de la aplicación, repórtalo a los desarrolladores para que puedan solucionarlo en futuras actualizaciones.
