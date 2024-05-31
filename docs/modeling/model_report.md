@@ -16,7 +16,8 @@ Para resolver el problema de clasificación de sarcasmo en titulares de noticias
 - **Capas Densas**: El modelo consta de varias capas densas (fully connected layers) que permiten la transformación y combinación de las características extraídas de los embeddings.
 - **Capas Dropout**: Entre cada capa densa intermedia se agrega una capa dropout para prevenir el overfitting del modelo a los datos.
 - **Función de Activación**: Se emplearon funciones de activación ReLU en las capas intermedias y una función 'softmax' en la capa de salida para obtener una probabilidad de que pertenezca a cada categoría.
-- **Optimización**: Se utilizó el optimizador 'Binary Crossentropy' para el ajuste de los pesos del modelo, debido a su mejor naturaleza para clasificación binaria.
+- **Optimización**: Se utilizó el optimizador RMSprop para el ajuste de los pesos del modelo, debido a su naturaleza adaptativa que le permite ajustar la tasa de aprendizaje de forma automática. 
+- **Pérdida**: Se utilizó la función de pérdida Binary Crossentropy, que es comúnmente utilizada en problemas de clasificación binaria.
 
 ## Evaluación del Modelo
 

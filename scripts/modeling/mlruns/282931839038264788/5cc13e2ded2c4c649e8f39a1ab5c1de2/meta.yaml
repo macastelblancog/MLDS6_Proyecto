@@ -4,7 +4,7 @@ entry_point_name: ''
 experiment_id: '282931839038264788'
 lifecycle_stage: active
 run_id: 5cc13e2ded2c4c649e8f39a1ab5c1de2
-run_name: casual-vole-159
+run_name: NN-BinaryCross-RMSprop
 run_uuid: 5cc13e2ded2c4c649e8f39a1ab5c1de2
 source_name: ''
 source_type: 4
