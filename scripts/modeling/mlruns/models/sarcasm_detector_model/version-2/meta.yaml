@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1717195077233
+current_stage: None
+description: null
+last_updated_timestamp: 1717195077233
+name: sarcasm_detector_model
+run_id: 5cc13e2ded2c4c649e8f39a1ab5c1de2
+run_link: null
+source: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/5cc13e2ded2c4c649e8f39a1ab5c1de2/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/5cc13e2ded2c4c649e8f39a1ab5c1de2/artifacts/model
+user_id: null
+version: 2

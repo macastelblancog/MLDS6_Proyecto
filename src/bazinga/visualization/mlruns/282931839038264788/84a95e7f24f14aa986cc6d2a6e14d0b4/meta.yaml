@@ -1,0 +1,16 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/84a95e7f24f14aa986cc6d2a6e14d0b4/artifacts
+deleted_time: 1717026753276
+end_time: 1717026663881
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: deleted
+run_id: 84a95e7f24f14aa986cc6d2a6e14d0b4
+run_name: wistful-chimp-551
+run_uuid: 84a95e7f24f14aa986cc6d2a6e14d0b4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717026663727
+status: 4
+tags: []
+user_id: not2

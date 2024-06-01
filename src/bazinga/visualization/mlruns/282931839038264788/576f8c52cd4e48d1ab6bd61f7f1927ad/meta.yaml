@@ -1,0 +1,15 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/576f8c52cd4e48d1ab6bd61f7f1927ad/artifacts
+end_time: 1717037502093
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: active
+run_id: 576f8c52cd4e48d1ab6bd61f7f1927ad
+run_name: LogisticRegression
+run_uuid: 576f8c52cd4e48d1ab6bd61f7f1927ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717037497396
+status: 3
+tags: []
+user_id: not2

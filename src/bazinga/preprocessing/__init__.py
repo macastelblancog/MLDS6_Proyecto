@@ -22,8 +22,8 @@ import numpy as np
 ## Scikit-learn
 from sklearn.feature_extraction.text import CountVectorizer
 ## Gensim
-from gensim.models.doc2vec import Doc2Vec, Word2Vec
-from gensim.models.doc2vec import TaggedDocument
+#from gensim.models.doc2vec import Doc2Vec, Word2Vec
+#from gensim.models.doc2vec import TaggedDocument
 from wordcloud import WordCloud
 ## transformers
 from transformers import BertTokenizer, BertModel
@@ -201,7 +201,7 @@ def analisis_Conteo(corpus, get_table = True, get_wc = True, get_graph = True, m
                 ax.axis("off")
                 plt.show()
     return ans
-    
+"""   
 def doc2Vec_embedding(corpus_df,column):
     '''
         
@@ -210,7 +210,7 @@ def doc2Vec_embedding(corpus_df,column):
     model = Doc2Vec(documents, vector_size = 100, window = 2, min_count = 1, workers = 4)
     corpus_df['X'] = corpus_df[column].apply(lambda text: model.infer_vector(text.split()))
     return corpus_df['X'].values
-
+"""
 def BERT_embeddings(texts, batch_size = 32):
     '''
         

@@ -1,0 +1,16 @@
+artifact_uri: file:///home/not2/my_ml_project/mlds6/MLDS6_Proyecto/scripts/modeling/mlruns/282931839038264788/f275ac9352a04ef5bcabaf3be48172b9/artifacts
+deleted_time: 1717026753272
+end_time: 1717026654628
+entry_point_name: ''
+experiment_id: '282931839038264788'
+lifecycle_stage: deleted
+run_id: f275ac9352a04ef5bcabaf3be48172b9
+run_name: debonair-zebra-309
+run_uuid: f275ac9352a04ef5bcabaf3be48172b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717026654474
+status: 4
+tags: []
+user_id: not2
