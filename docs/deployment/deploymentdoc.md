@@ -79,27 +79,24 @@ El modelo se desplegará y ejecutará localmente desde una terminal. La arquitec
     ```bash
     cd MLDS6_Proyecto
     ```
-6. **Cargar el Modelo:** Utiliza la CLI de MLflow para cargar el modelo desde el repositorio clonado:
+6. **Cargar el Modelo:** Ir a la carpeta de [visualización](../../src/bazinga/visualization/) en la terminal y arrancar el servicio CLI de MLflow:
     ```bash
-    mlflow models serve -m models/NN-BinaryCross-RMSprop --port <puerto>
+    mlflow models serve -m "models:/sarcasm_detector_model/2" -p <puerto> --no-conda
     ```
     Reemplaza <puerto> por el puerto que deseas utilizar para acceder al modelo.
 
  ### Instrucciones de uso 
 
 **Realizar una Predicción:**
+En la misma carpeta de [visualización](../../src/bazinga/visualization/) usar el script deployment.py de la siguiente manera
 
-Utiliza herramientas como curl o tu lenguaje de programación favorito para enviar solicitudes HTTP al modelo y obtener predicciones. Por ejemplo, si estás utilizando curl:
-    
+     python3 deployment.py "<titular>" <puerto>
 
-    curl -X POST http://localhost:<puerto>/invocations -H "Content-Type: application/json" -d '{"data": "input_data"}'
+este dará como resultado lo siguiente
 
+    Prediction: {'predictions': [[<float>,<float>]]}
 
-Reemplaza <puerto> por el puerto en el que está corriendo el modelo y "input_data" por los datos de entrada para la predicción.
-
-Una vez que hayas terminado de utilizar el modelo, puedes cerrar el servidor de MLflow. Esto detendrá el servidor y liberará los recursos utilizados.
-
-    Ctrl + C
+En donde el primer float representa la probabilidad de que no sea sarcástico, y el segundo de que sea sarcástico
 
 ### Instrucciones de Mantenimiento para Usuarios
 
