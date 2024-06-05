@@ -12,6 +12,8 @@ El problema que se buscó resolver con el modelo final es la detección de sarca
 
 Para resolver el problema de clasificación de sarcasmo en titulares de noticias, se desarrolló un modelo basado en una red multicapa compuesta de capas densas. Este modelo y sus respectivas metrícas está guardado en [MLflow](../../scripts/modeling/mlruns/) con el nombre de 'NN-BinaryCross-RMSprop'. El modelo se diseñó utilizando las siguientes características y técnicas:
 
+![NNstructure](../Images/NNstructure.png)
+
 - **Embeddings**: Se utilizaron embeddings de BERT para representar los titulares en un espacio vectorial continuo.
 - **Capas Densas**: El modelo consta de varias capas densas (fully connected layers) que permiten la transformación y combinación de las características extraídas de los embeddings.
 - **Capas Dropout**: Entre cada capa densa intermedia se agrega una capa dropout para prevenir el overfitting del modelo a los datos.
