@@ -2,25 +2,25 @@
 
 ## Resumen Ejecutivo
 
-Este informe describe los resultados del proyecto de machine learning y presenta los principales logros y lecciones aprendidas durante el proceso.
+Este proyecto plantea el diseño y desarrollo de una aplicación para la clasificación binaria de titulares de noticias en inglés, en sarcástico o no. Los usuarios pueden cargar un texto o una lista de textos y obtener con la clasificación un porcentaje con la probabilidad de que cada uno de los titulares sea sarcástico. Los modelos se pueden acceder mediante una aplicación en ML Flow o através de este repositorio, copiando la carpeta de src e importanto el módulo Bazinga para importar modelos o generar uno nuevo.
 
 ## Resultados del proyecto
 
-- Resumen de los entregables y logros alcanzados en cada etapa del proyecto.
-- Evaluación del modelo final y comparación con el modelo base.
-- Descripción de los resultados y su relevancia para el negocio.
+- Se desarrolló una runtina personalizada para la limpieza del texto, para posteriormente usar BERT para tokernizar y hacer embbedings del texto, con el objetivo de extraer las características de los titulares de entrada.
+- Para resolver el problema de clasificación de sarcasmo en titulares de noticias, se desarrolló un modelo basado en una red multicapa compuesta de capas densas. Este modelo y sus respectivas metrícas está guardado en MLflow con el nombre de 'NN-BinaryCross-RMSprop'.
+- El modelo obtenido permite hacer las clasificación de un texto o una lista de textos, donde se retorna por cada titular la probabilidad de que sea sarcástico. Aunque se obtuvo un F1 de más del 90% al entrenar, con los datos de validación no se obtuvieron resultados similares, lo que sugiere posibles problemas de generalización del modelo.
 
 ## Lecciones aprendidas
 
 1. **Identificación de los principales desafíos y obstáculos encontrados durante el proyecto:**
 
-- Embebido de los datos de entrenamiento: Encontrar una forma adecuada de embedder los datos de entrenamiento fue un gran desafío. Probamos tres diferentes tipos de embeddings (w2v, d2v y BERT). Los dos primeros no produjeron buenos resultados en las métricas utilizadas para evaluar los modelos (precisión, puntuación F1, recall, precisión), sin superar el 70%. Con BERT, tuvimos el problema de que las máquinas se quedaban sin memoria antes de poder procesar los datos.
-- Optimización del modelo: Otro problema importante fue encontrar el modelo con los mejores resultados. Queríamos obtener un modelo que ofreciera métricas altas y que también fuera rápido. Sin embargo, los modelos base y la mayoría de las redes neuronales que probamos no cumplieron con estas expectativas.
+- **Embebido de los datos de entrenamiento:** Encontrar una forma adecuada de embedder los datos de entrenamiento fue un gran desafío. Probamos tres diferentes tipos de embeddings (w2v, d2v y BERT). Los dos primeros no produjeron buenos resultados en las métricas utilizadas para evaluar los modelos (precisión, puntuación F1, recall, precisión), sin superar el 70%. Con BERT, tuvimos el problema de que las máquinas se quedaban sin memoria antes de poder procesar los datos.
+- **Optimización del modelo:** Otro problema importante fue encontrar el modelo con los mejores resultados. Queríamos obtener un modelo que ofreciera métricas altas y que también fuera rápido. Sin embargo, los modelos base y la mayoría de las redes neuronales que probamos no cumplieron con estas expectativas, ya que se obtenian buenas métricas al entrenar, pero no al validar; por lo que los modelos podrían presentar problemas de generalización.
 
 2. **Lecciones aprendidas en relación al manejo de los datos, el modelamiento y la implementación del modelo:**
 
-- Es fundamental tener en cuenta los recursos disponibles para el proyecto, ya que esto determinará qué enfoques se pueden utilizar.
-- Durante la fase de modelado, es crucial probar todo tipo de modelos y ajustar los hiperparámetros para encontrar el modelo que ofrezca el mejor rendimiento en las métricas medidas y también en el tiempo que tarda en generar un resultado.
+- Las operaciones de embeddings apoyadas de BERT requieren del apoyo de una GPU, en especial para la fase de entrenamiento del modelo. Para esto, fue muy útil plantear una rutina apoyada en PyTorch para optimizar tiempos en el desarrollo.
+- Los paquetes de instalación de PyTorch y Keras para GPU, apoyados en CUDA, no son compatibles, por lo que la optimización de la rutina de procesamiento de BERT no se podia usar en un Pipeline para hacer un entrenamiento con Tensorflow optimizado con GPU simultaneamente.
 - Para la implementación, es muy importante guardar correctamente el modelo en MLflow y considerar en qué formato se deben administrar los datos de entrada para que los datos sin procesar proporcionados por el usuario puedan preprocesarse y dejarse en un formato que el modelo pueda usar.
 
 3. **Recomendaciones para futuros proyectos de machine learning:**
@@ -39,15 +39,15 @@ Este informe describe los resultados del proyecto de machine learning y presenta
 
 - **Identificación de las áreas de mejora y oportunidades de desarrollo futuras:**
 
-    - Mejora de la precisión: Se puede trabajar en la precisión del modelo para alcanzar niveles más altos, cercanos al 95%.
+    - Mejora de la precisión: Se puede trabajar en la precisión del modelo para alcanzar niveles más altos, cercanos al 95% que además se puedan generalizar para datos nuevos por fuera del conjunto de datos del entrenamiento.
     - Optimización del tiempo de respuesta: Se podría explorar otras estructuras de redes neuronales y optimizar el preprocesamiento de las entradas sin procesar para lograr que el tiempo de respuesta sea simultáneo.
-    - Actualización del conjunto de datos: Actualizar el conjunto de datos a uno más reciente podría mejorar la pertinencia y la precisión del modelo, asegurando que las etiquetas y los conceptos no hayan cambiado significativamente con el tiempo.
+    - Actualización del conjunto de datos: Actualizar el conjunto de datos a uno más reciente podría mejorar la pertinencia y la precisión del modelo, asegurando que las etiquetas y los conceptos no hayan cambiado significativamente con el tiempo. A su vez, usar otros titulares que no se enfoquen en hechos de Estados Unidos e incluso estén en otros idiomas.
     - Exploración de nuevas tecnologías: Investigar y probar nuevas técnicas y tecnologías en NLP que puedan ofrecer mejoras adicionales en el rendimiento y la velocidad del modelo.
 
 ## Conclusiones
 
-- Resumen de los resultados y principales logros del proyecto.
-- Conclusiones finales y recomendaciones para futuros proyectos.
+- Se desarrolló una red neuronal secuencial para la clasificación de titulares de noticiar en sarcásticos o no sarcásticos.
+- Se implementó una rutina de preprocesamiento apoyado en BERT para extraer características antes de emplear la red neuronal.
 
 ## Agradecimientos
 
