@@ -46,8 +46,8 @@ Este proyecto plantea el diseño y desarrollo de una aplicación para la clasifi
 
 ## Conclusiones
 
-- Se desarrolló una red neuronal secuencial para la clasificación de titulares de noticiar en sarcásticos o no sarcásticos.
-- Se implementó una rutina de preprocesamiento apoyado en BERT para extraer características antes de emplear la red neuronal.
+- Se desarrolló una red neuronal secuencial para la clasificación de titulares de noticiar en sarcásticos o no sarcásticos con un F1 del 90%, accesible mediante un módulo importable o MLFlow.
+- Se empleó el modelo BERT para el tokenizado y embeddings de los texto, apoyado de una rutina previa para procesamiento del texto que permite garantizar una buena extracción de características antes del modelamiento.
 
 ## Agradecimientos
 
