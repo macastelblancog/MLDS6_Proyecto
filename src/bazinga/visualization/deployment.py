@@ -42,8 +42,30 @@ def predict(text, port):
     
     
     if response.status_code == 200:
-        prediction = response.json()
-        return prediction
+        predictions = response.json().get('predictions', [])
+        
+        # Ensure the predictions are lists of floats
+        formatted_predictions = []
+        for pred_list in predictions:
+            formatted_pred_list = []
+            for pred in pred_list:
+                try:
+                    formatted_pred_list.append(round(float(pred), 2))
+                except (ValueError, TypeError):
+                    print(f"Skipping invalid prediction value: {pred}")  # Debugging print for invalid values
+                    continue
+            formatted_predictions.append(formatted_pred_list)
+        
+        if formatted_predictions:
+            first_prediction = formatted_predictions[0][0]
+            if first_prediction >= 0.5:
+                print("The headline is not sarcastic.")
+            else:
+                print("The headline is sarcastic.")
+        
+        return formatted_predictions
+        
+        return formatted_predictions
     else:
         return f"Failed to make prediction. Status code: {response.status_code}. Reason: {response.text}"
 
